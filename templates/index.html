@@ -1,22 +1,3 @@
-//https://www.eclipse.org/paho/clients/js/
-
-function LED1_On() {
-	//alert("led on");
-	console.log("led on");
-	document.getElementById("sensor").innerHTML="ENCENDIDO";
-	message = new Paho.MQTT.Message("ON");
-    	message.destinationName = "prromero.fis@unach.edu.ec/prueba1";
-    	client.send(message);
-  
-}
-function LED1_Off(){	
-	//alert("led off");
-	console.log("led off");
-	message = new Paho.MQTT.Message("OFF");
-    	message.destinationName = "prromero.fis@unach.edu.ec/prueba1";
-    	client.send(message);
-	document.getElementById("sensor").innerHTML="APAGADO";
-}
 var1="";
 function historial1() {
 	//alert("led on");
@@ -26,10 +7,6 @@ function historial1() {
     	client.send(message);
   	var1="h1";
 }
-
-
-
-
 
 
 
@@ -60,7 +37,7 @@ function historial1() {
 	
     client.subscribe("prromero.fis@unach.edu.ec/prueba1");	  
     client.subscribe("prromero.fis@unach.edu.ec/prueba");
-    message = new Paho.MQTT.Message("hola");
+    message = new Paho.MQTT.Message("empezando");
     message.destinationName = "prromero.fis@unach.edu.ec/prueba1";
     client.send(message);
 	
@@ -86,24 +63,11 @@ function historial1() {
 	  document.getElementById("sensor").innerHTML=vector[0];
 	  document.getElementById("sensor2").innerHTML=vector[1];
 	  
-	  if(tamano>=3 && var1=="h1"){
+
 	  document.getElementById("historial11").innerHTML=vector[2];
-	  }
+
 
 	  
-	  
-	//  if (message.payloadString=="nivel alto") { 
-	 // document.getElementById("sensor").innerHTML=message.payloadString;
-	 // }
-	//  if (message.payloadString=="nivel bajo") { 
-	 // document.getElementById("sensor").innerHTML=message.payloadString;
-	 // }
-	  
-	  //if (message.payloadString=="Nivel alto") { 
-	 // document.getElementById("sensor2").innerHTML=message.payloadString;
-	  //}
-	 // if (message.payloadString=="Nivel bajo") { 
-	 // document.getElementById("sensor2").innerHTML=message.payloadString;
-	 // }
+
 
  }
